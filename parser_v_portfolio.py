@@ -86,3 +86,13 @@ def get_data():
                    'book_status': book_status,
                }
            )
+        print(f'Обработана {page}/{pages_count}')
+        time.sleep(1)
+    with open(f'labirint_{cur_date}.json','w') as file:
+        json.dump(book_data,file, indent=4, ensure_ascii= False)
+
+def main():
+    get_data()
+
+if __name__ == '__main__':
+    main()
